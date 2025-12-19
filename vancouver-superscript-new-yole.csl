@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<style xmlns="http://purl.org/net/xbiblio/csl"
+       class="numeric"
+       version="1.0"
+       demote-non-dropping-particle="sort-only"
+       page-range-format="minimal">
+
+  <info>
+    <title>Vancouver Superscript – Ogheneyole Jeremiah</title>
+    <id>http://www.zotero.org/styles/vancouver-superscript-new-yole</id>
+    <link href="http://www.zotero.org/styles/vancouver-superscript" rel="template"/>
+    <category citation-format="numeric"/>
+    <category field="medicine"/>
+    <updated>2025-12-19T13:37:54+00:00</updated>
+    <rights license="http://creativecommons.org/licenses/by-sa/3.0/"/>
+  </info>
+
+  <!-- IN TEXT -->
+  <citation collapse="citation-number">
+    <sort>
+      <key variable="citation-number"/>
+    </sort>
+    <layout delimiter="," vertical-align="sup">
+      <text variable="citation-number"/>
+    </layout>
+  </citation>
+
+  <!-- AUTHOR -->
+  <macro name="author">
+    <names variable="author" delimiter=", ">
+      <name name-as-sort-order="all"
+            sort-separator=" "
+            delimiter=", "
+            delimiter-precedes-last="always"/>
+    </names>
+  </macro>
+
+  <!-- TITLE -->
+  <macro name="title">
+    <text variable="title"/>
+  </macro>
+
+  <!-- JOURNAL -->
+  <macro name="container-title">
+    <text variable="container-title" form="short" strip-periods="true"/>
+  </macro>
+
+  <!-- DATE -->
+  <macro name="date">
+    <date variable="issued">
+      <date-part name="year"/>
+    </date>
+  </macro>
+
+  <!-- VOLUME AND ISSUE -->
+  <macro name="journal-location">
+    <text variable="volume"/>
+    <group prefix="(" suffix=")">
+      <text variable="issue"/>
+    </group>
+  </macro>
+
+  <!-- PAGES -->
+  <macro name="pages">
+    <text variable="page" prefix=":"/>
+  </macro>
+
+  <!-- DOI -->
+  <macro name="access">
+    <choose>
+      <if variable="DOI">
+        <text variable="DOI" prefix="doi:"/>
+      </if>
+    </choose>
+  </macro>
+
+  <!-- BIBLIOGRAPHY -->
+  <bibliography et-al-min="100" et-al-use-first="100">
+    <layout suffix=".">
+
+      <text variable="citation-number" suffix=". "/>
+
+      <text macro="author"/>
+      <text value=". "/>
+
+      <text macro="title"/>
+      <text value=". "/>
+
+      <text macro="container-title"/>
+      <text value=". "/>
+
+      <text macro="date"/>
+      <text value=";"/>
+
+      <text macro="journal-location"/>
+
+      <text macro="pages"/>
+      <text value=". "/>
+
+      <text macro="access"/>
+
+    </layout>
+  </bibliography>
+
+</style>
